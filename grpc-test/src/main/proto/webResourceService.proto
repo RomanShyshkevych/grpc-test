@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.roman.grpc";
+
+service WebResourceService {
+  rpc CheckResource(WebResourceRequest) returns (WebResourceResponse) {}
+}
+
+message WebResourceRequest {
+  string resource = 1;
+}
+
+message WebResourceResponse {
+  string resource = 1;
+  int32  responseCode = 2;
+  int64  timestamp = 3;
+}
